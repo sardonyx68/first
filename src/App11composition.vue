@@ -15,14 +15,14 @@
 
   <hr color="blue" size="3" />
 
-  <div v-for = "(item, index) in state.guest" :key = "index" >
+  <div v-for = "(item, index) in guest" :key = "index" >
     번호 : {{ index }}, 이름 : {{ item.name }}, 나이 : {{ item.age }}, 제목 : {{  item.title }} <hr>
   </div>
 </template>
 
 <script>
 //import Hello from './components/HelloWorld.vue'
- import { ref, onMounted, reactive } from 'vue'
+import { ref, onMounted, reactive } from 'vue'
 
 export default {
   setup() {
@@ -39,10 +39,10 @@ export default {
       info.value  = ' 숫자를 감소합니다.';
     };
 
-     onMounted( () => {
-       count.value=1000;
-       info.value = "홍길동";
-     });
+    onMounted( () => {
+      count.value=1000;
+      info.value = "홍길동";
+    });
   
     const state = reactive ({
       guest : [

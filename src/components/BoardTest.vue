@@ -1,6 +1,6 @@
 <template lang="">
     <div>
-        <img src="../assets/images/a1.png" width="300" height="150">
+        <img src="../assets/images/aaa.gif" width="300" height="150"> <br>
         Test.vue 저자 : {{ name }}
         <!-- guest 배열객체 출력  -->
         <div v-for = "(item, index) in guest" :key = "index" >

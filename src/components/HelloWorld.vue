@@ -1,12 +1,10 @@
 <template>
   <div class="hello">
-    <h2>{{ kakao }}</h2>
+    <h2>{{ msg }}</h2>
     
     HelloWorld.vue Installed CLI Plugins<br>
-    
     HelloWorld.vue Essential Links<br>
-    
-    HelloWorld.vue Ecosystem<br>
+
     
   </div>
 </template>
@@ -15,7 +13,7 @@
 export default {
   name: 'HelloWorld',
   props: {
-    kakao: String
+    msg: String
   }
 }
 </script>
