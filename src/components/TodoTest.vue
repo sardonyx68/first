@@ -1,23 +1,39 @@
 <template lang="">
     <div>
-        <button @click="deleteTodo">todo삭제</button>
+        <!--:skytodo="item"  @click-delete="deleteTodo" v-on:toggle-checkbox="greenCheckbox"-->
+        <input type="checkbox" :checked="skytodo.checked" @change="myToggleCheckbox"> {{skytodo.checked}}
+
+        <span :style="skytodo.checked ? 'text-decoration:line-through' : '' ">
+            {{skytodo.id}} - {{skytodo.text}}
+        </span>
+        <button @click="myDeleteTodo">삭제</button>
     </div>
 </template>
 
 <script>
 export default {
     name : "TodoList",
-    data()  {
-        return {
-            lotto : 1,
-        }
+    props : {       //값을 전달 받음
+        skytodo : { type: Object, required: true }
     },
+    // data()  {
+    //     return {
+    //         skytodo : { type: Object, required: true }
+    //     }
+    // },
     methods : {
-        deleteTodo() {
-            console.log( 'TodoList deleteTodo 함수' );
+        myDeleteTodo() {
+            console.log( 'TodoTest MyDeleteTodo 함수' );
+            this.$emit( 'click-delete', this.skytodo.id );       //app.vue에서 값을 받는
         },
-        toggleCheckbox() {
-            console.log( 'TodoList.toggleCheckbox 함수' );
+        myToggleCheckbox(event) {
+            console.log( 'TodoTest.MyToggleCheckbox 함수' );
+
+             //app.vue에서 값을 받는, {}는 인자를 한개이상 받아오기위해서 사용
+            this.$emit( 'toggle-checkbox', {
+                id: this.skytodo.id,
+                checked: event.target.checked
+            })
         }
     },
 }
