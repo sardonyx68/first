@@ -1,16 +1,12 @@
 {
   "guests": [
     {
-      "id": "f683",
-      "title": "주말"
+      "id": "1",
+      "title": "note"
     },
     {
-      "id": "c63e",
-      "title": "신난당"
-    },
-    {
-      "id": "c147",
-      "title": "냐하하하하하하"
+      "id": "2",
+      "title": "book"
     }
   ]
 }
